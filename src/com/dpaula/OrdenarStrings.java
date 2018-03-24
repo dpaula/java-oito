@@ -11,23 +11,20 @@ public class OrdenarStrings {
 
 		List<String> nomes = Arrays.asList("Fernando de Paula de Lima", "Carla Weitzel", "Carmem Lucia", "Pamela");
 
-		// Collections.sort(nomes, new NomesSort());
-
 		nomes.sort(new NomesSort());
 
 		System.out.println(nomes);
 
-		nomes.forEach(new Consumidor());
+		Consumer<String> consumer = new Consumer<String>() {
 
-	}
+			@Override
+			public void accept(String t) {
+				System.out.println(t);
+			}
+		};
 
-}
+		nomes.forEach(consumer);
 
-class Consumidor implements Consumer<String> {
-
-	@Override
-	public void accept(String t) {
-		System.out.println(t);
 	}
 
 }
