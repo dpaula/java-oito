@@ -3,7 +3,6 @@ package com.dpaula;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class OrdenarStrings {
 
@@ -15,16 +14,9 @@ public class OrdenarStrings {
 
 		System.out.println(nomes);
 
-		nomes.forEach(new Consumer<String>() {
-
-			@Override
-			public void accept(String t) {
-				System.out.println(t);
-			}
-		});
+		nomes.forEach(s -> System.out.println(s));
 
 	}
-
 }
 
 class NomesSort implements Comparator<String> {
