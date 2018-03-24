@@ -11,8 +11,6 @@ public class OrdenarStrings {
 
 		List<String> nomes = Arrays.asList("Fernando de Paula de Lima", "Carla Weitzel", "Carmem Lucia", "Pamela");
 
-		nomes.sort(new NomesSort());
-
 		// utilizando metodo compare da api Integer que compara dois valores, e rotorna
 		// 1, -1 e 0
 		// basta passar para lambda que vai entender e converter em um comparator
