@@ -15,15 +15,13 @@ public class OrdenarStrings {
 
 		System.out.println(nomes);
 
-		Consumer<String> consumer = new Consumer<String>() {
+		nomes.forEach(new Consumer<String>() {
 
 			@Override
 			public void accept(String t) {
 				System.out.println(t);
 			}
-		};
-
-		nomes.forEach(consumer);
+		});
 
 	}
 
