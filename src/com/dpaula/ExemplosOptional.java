@@ -6,6 +6,7 @@ package com.dpaula;
 import java.util.Arrays;
 import java.util.List;
 import java.util.OptionalDouble;
+import java.util.stream.Collectors;
 
 /**
  * @author ferna
@@ -36,6 +37,13 @@ public class ExemplosOptional {
 				.average();/**/// traz media
 
 		System.out.println(media.orElse(0));
+		System.out.println();
+
+		cursos = cursos.stream()/**/
+				.filter(c -> c.getAlunos() > 100)/**/
+				.collect(Collectors.toList());// usando Collectors.toList() como recurso para retonrar a lista alterada
+
+		cursos.forEach(c -> System.out.println(c.getNome()));
 	}
 
 }
