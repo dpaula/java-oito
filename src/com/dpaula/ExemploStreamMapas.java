@@ -33,6 +33,15 @@ public class ExemploStreamMapas {
 			System.out.println(nome + " tem " + alunos + " alunos");
 		});
 
+		System.out.println();
+
+		System.out.println("Cursos com mais de 50 alunos: ");/**/
+		cursos.stream()/**/
+				.filter(c -> c.getAlunos() > 50)/**/
+				.collect(Collectors.toMap(Curso::getNome, Curso::getAlunos))/**/
+				.forEach((nome, aluno) -> {/**/
+					System.out.println("\t" + nome + ": " + aluno + " alunos");/**/
+				});
 	}
 
 }
