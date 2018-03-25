@@ -18,12 +18,19 @@ public class ExemplosStream {
 	 */
 	public static void main(String[] args) {
 
+		//
 		List<Curso> cursos = Arrays.asList(new Curso("Python", 45), new Curso("JavaScript", 150),
 				new Curso("Java 8", 113), new Curso("C", 55));
 
-		cursos.sort(Comparator.comparing(c -> c.getNome()));
+		cursos.sort(Comparator.comparing(Curso::getAlunos));
 
-		cursos.forEach(c -> System.out.println(c.getNome()));
+		// cursos.forEach(c -> System.out.println(c.getNome()));
+
+		// mais de 100 alunos
+		cursos.stream()/**/// usando stream, o mesmo retorna uma coleção para usar com vários métodos uteis
+				.filter(c -> c.getAlunos() > 100)/**/// um dos métodos é o filter, para filtrar, retornando e stream
+				.forEach(c -> System.out.println(c.getNome()));// depois só iterar pela lista ajustada
+
 	}
 
 }
