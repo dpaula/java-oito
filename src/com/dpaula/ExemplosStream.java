@@ -31,6 +31,14 @@ public class ExemplosStream {
 				.filter(c -> c.getAlunos() > 100)/**/// um dos métodos é o filter, para filtrar, retornando e stream
 				.forEach(c -> System.out.println(c.getNome()));// depois só iterar pela lista ajustada
 
+		System.out.println();
+
+		// imprimir so a qtd de alunos
+		cursos.stream()/**/
+				.filter(c -> c.getAlunos() > 100)/**/
+				.map(c -> c.getAlunos())/**/// o map converte a lista em uma nova lista de acordo com a funcao
+				.forEach(System.out::println);// imprimindo usando metodo reference
+
 	}
 
 }
