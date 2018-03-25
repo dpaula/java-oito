@@ -45,6 +45,15 @@ public class ExemplosStream {
 											// reference
 				.forEach(System.out::println);// imprimindo usando metodo reference
 
+		System.out.println();
+
+		int soma = cursos.stream()/**/
+				.filter(c -> c.getAlunos() > 100)/**/
+				.mapToInt(Curso::getAlunos)/**/// usando o mapToInt é melhor para tratar com numeros
+				.sum();// e seu rotorno pode usar outros métodos uteis como sum
+
+		System.out.println(soma);
+
 	}
 
 }
