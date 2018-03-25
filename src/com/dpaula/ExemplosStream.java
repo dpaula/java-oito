@@ -33,10 +33,16 @@ public class ExemplosStream {
 
 		System.out.println();
 
+		// padrão usado nestes casos de retorno do mesmo tipo para uma novo método é
+		// chamado de interface fluente,
+		// com este padrão vc vai invocando o proximo método, sem precisar ficar
+		// guardando em variavaeis
+
 		// imprimir so a qtd de alunos
 		cursos.stream()/**/
 				.filter(c -> c.getAlunos() > 100)/**/
-				.map(c -> c.getAlunos())/**/// o map converte a lista em uma nova lista de acordo com a funcao
+				.map(Curso::getAlunos)/**/// o map converte a lista em uma nova lista de acordo com a funcao, usando
+											// reference
 				.forEach(System.out::println);// imprimindo usando metodo reference
 
 	}
